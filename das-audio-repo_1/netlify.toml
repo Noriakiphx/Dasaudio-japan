@@ -1,0 +1,14 @@
+# DAS Audio Japan — Netlify 設定（静的サイト・ビルド不要）
+[build]
+  publish = "."
+
+# 動画・画像は長期キャッシュ（任意）
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
